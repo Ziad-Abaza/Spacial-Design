@@ -1,0 +1,847 @@
+:root {
+    /***************  root settings  **************/
+    /* ألوان */
+    --color-1: #ffffff; /* لون 1 */
+    --color-2: #001; /* لون 2 */
+    --color-3: #f9003e; /* لون 3 */
+    --color-4: #ff6600; /* لون 4 */
+    --color-5: #6c35da; /* لون 5 */
+    --color-6: #4CAF50; /* لون 6 */
+    --color-7: #737378; /* لون 7 */
+    --color-8: #0011ff; /* لون 8 */
+
+    /* أنماط الخطوط */
+    --font-family-1: "Montserrat", Arial, sans-serif; /* نوع الخط الأساسي */
+    --font-family-2: "Oswald", sans-serif; /* نوع الخط لعناوين الصفحة */
+
+    /* حواف */
+    --border-1: solid 3px #ff6600; /* الحواف 1 */
+    --border-2: solid 4px #222; /* الحواف 2 */
+    --border-3: solid 2px #00c3ff; /* الحواف 3 */
+    --border-4: solid 2px var(--color-4); /* الحواف 3 */
+    --border-5: solid 3px #f9003e; /* الحواف 3 */
+    --border-6: solid 4px #001; /* الحواف 3 */
+
+    /* مدة الانتقال */
+    --transition-duration-03: 0.3s; /* مدة الانتقال */
+    --transition-duration-08: 0.8s; /* مدة الانتقال */
+    --transition-duration-1: 1s; /* مدة الانتقال */
+
+    /* أحجام الخطوط */
+    --font-size-40: 40px;
+    --font-size-28: 28px; /* حجم العنوان الرئيسي */
+    --font-size-24: 24px; /* حجم العنوان الفرعي */
+    --font-size-20: 20px; /* حجم الفقرة */
+    --font-size-18: 18px; /* حجم الفقرة */
+    --font-size-16: 16px; /* حجم الفقرة */
+    --font-size-14: 14px; /* حجم الفقرة */
+    --font-size-12: 12px; /* حجم الفقرة */
+    
+    /* ألوان الخلفيات */
+    --background-color-white: #f8f8f8; 
+    --background-color-black: #333333; 
+    --background-color-subscreen: #747d89bf; 
+    --background-color-main: #02617b;
+    --background-color-sub: #807d8547;
+    --background-color-1: #11223379;
+    --background-color-2: #ffffff55; 
+    --background-color-3: #aa00009d; 
+    --background-color-4: #054ebc; 
+    --background-color-5: #123; 
+    --background-color-6: #009688; 
+    --background-color-7: #ffffff8e;
+    --background-color-8: #001; 
+
+    /* ظل المربعات */
+    --box-shadow-1: 0 4px 8px #7342b8; 
+    --box-shadow-2: 2px 2px 12px #123; 
+    --box-shadow-3: 2px 4px 8px #ffffff55; 
+    --box-shadow-4: 0 4px 8px #4c7daf; 
+    --box-shadow-5: 0 4px 8px #a6d126;
+    
+}
+/* إزالة الهامش والحدود وتعيين نسبة الحشو لجميع العناصر */
+* {
+    padding: 0;
+    margin: 0;
+    outline: none;
+}
+
+/* تنسيق النص والخلفية للصفحة */
+body {
+    font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: var(--background-color-main);
+}
+
+/* تعيين لون معين للنص ضمن عناصر الصفحة التي تحمل العناصر ذات العلامة <span> */
+.landing-page span,
+.about-us span,
+.skills span,
+.gallery span,
+.features span,
+.testimonials span{
+    color: var(--color-4);
+}
+
+/*/////////////////////// Setting Box Styles ///////////////////////*/
+
+/* تنسيق مربع الإعدادات */
+.setting-box {
+    position: fixed;
+    top: 0;
+    left: -210px;
+    padding: 10px 5px;
+    background-color: var(--background-color-subscreen);
+    width: 200px;
+    min-height: 100vh;
+    z-index: 8;
+    transition: var(--transition-duration-1);
+    -webkit-transition: var(--transition-duration-1);
+    -moz-transition: var(--transition-duration-1);
+    -ms-transition: var(--transition-duration-1);
+    -o-transition: var(--transition-duration-1);
+}
+
+/* تفعيل مربع الإعدادات */
+.setting-box.active {
+    left: 0;
+}
+
+/* زر التحكم بمربع الإعدادات */
+.setting-box .container-gear {
+    position: absolute;
+    right: -34px;
+    top: 100px;
+    background-color: var(--background-color-subscreen);
+    border-radius: 0 5px 5px 0;
+    -webkit-border-radius: 0 5px 5px 0;
+    -moz-border-radius: 0 5px 5px 0;
+    -ms-border-radius: 0 5px 5px 0;
+    -o-border-radius: 0 5px 5px 0;
+    font-size: var(--font-size-20);
+    text-align: center;
+}
+
+/* زر تحكم الإعدادات */
+.setting-box .container-gear i {
+    cursor: pointer;
+    padding: 8px 2px;
+    width: 30px;
+}
+
+/*/////////////////////// Container for Setting Options ///////////////////////*/
+.setting-box .setting-container {
+    padding: 7px;
+}
+
+/* مربع الخيارات */
+.setting-box .setting-container .option-box {
+    padding: 5px;
+    text-align: center;
+    background-color: var(--background-color-7);
+    margin: 7px auto;
+    height: fit-content;
+    width: 90%;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+}
+
+/* عنوان الخيار */
+.setting-box .setting-container h4 {
+    margin: 0;
+    color: var(--color-4);
+    font-size: var(--font-size-16);
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+/* قائمة الألوان */
+.setting-box .setting-container .colors-list {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+    margin: 10px 0 0;
+}
+
+/* خيار اللون الفرعي */
+.setting-box .setting-container .colors-list li {
+    text-decoration-line: none;
+    -moz-text-decoration-line: none;
+    width: 20px;
+    height: 20px;
+    background-color: var(--background-color-8);
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    cursor: pointer;
+    opacity: 0.5;
+    display: inline-block;
+}
+
+/* تحديد اللون الرئيسي */
+.setting-box .colors-list li.mainOPtion {
+    opacity: 1;
+}
+
+/* قائمة ألوان الخلفية */
+.setting-box .setting-container .backcolors-list {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+    margin: 10px 0 0;
+}
+
+/* خيارات ألوان الخلفية */
+.setting-box .setting-container .backcolors-list li {
+    text-decoration-line: none;
+    -moz-text-decoration-line: none;
+    width: 20px;
+    height: 20px;
+    background-color: var(--background-color-8);
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    cursor: pointer;
+    opacity: 0.5;
+    display: inline-block;
+}
+
+/* تحديد لون الخلفية المختار */
+.setting-box .backcolors-list li.setColor {
+    opacity: 1;
+}
+
+/* خيارات الخلفية */
+.option-box .background-option span {
+    width: 35%;
+    margin: 5px auto;
+    padding: 3px 10px;
+    background-color: var(--background-color-6);
+    opacity: 0.5;
+    display: inline-block;
+    border-radius: 12px;
+    color: var(--color-1);
+    cursor: pointer;
+}
+
+/* تفعيل الخيار المحدد */
+.option-box .background-option .active {
+    opacity: 1;
+}
+/* خيارات - تحديد لون اللوحة */
+
+/* تحديد لون اللوحة الرئيسي */
+.setting-box .colors-list li:first-child {
+    background-color: #ff6600;
+}
+
+/* تحديد لون اللوحة الثاني */
+.setting-box .colors-list li:nth-child(2) {
+    background-color: #6c35da;
+}
+
+/* تحديد لون اللوحة الثالث */
+.setting-box .colors-list li:nth-child(3) {
+    background-color: #ffffff;
+}
+
+/* تحديد لون اللوحة الرابع */
+.setting-box .colors-list li:nth-child(4) {
+    background-color: #f9003e;
+}
+
+/* تحديد لون اللوحة الخامس */
+.setting-box .colors-list li:nth-child(5) {
+    background-color: #0011ff;
+}
+
+/* تحديد لون الخلفية الرئيسي */
+.setting-box .backcolors-list li:first-child {
+    background-color: #345;
+}
+
+/* تحديد لون الخلفية الثاني */
+.setting-box .backcolors-list li:nth-child(2) {
+    background-color: #6c35da;
+}
+
+/* تحديد لون الخلفية الثالث */
+.setting-box .backcolors-list li:nth-child(3) {
+    background-color: #ff7799;
+}
+
+/* تحديد لون الخلفية الرابع */
+.setting-box .backcolors-list li:nth-child(4) {
+    background-color: #ff4433;
+}
+
+/* تحديد لون الخلفية الخامس */
+.setting-box .backcolors-list li:nth-child(5) {
+    background-color: #009688;
+}
+
+
+/*/////////////////////// Header Section Styles ///////////////////////*/
+
+/* تنسيق قسم الهيدر */
+.landing-page {
+    background-image: url('../images/slide-show/0.jpg');
+    background-size: cover;
+    min-height: 100vh;
+    position: relative;
+    padding: 20px 25px;
+    text-transform: capitalize;
+}
+
+/* تأثير الظلام الخفيف للهيدر */
+.landing-page .overlay {
+    background-color: hsla(0, 0%, 0%, 0.8);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+
+/* منطقة الهيدر */
+.landing-page .header-area {
+    position: relative;
+    z-index: 2;
+    color: var(--color-1);
+    display: flex;
+    padding: 10px 10px;
+}
+
+/* شعار الهيدر */
+.landing-page .header-area .logo {
+    width: 300px;
+    font-size: var(--font-size-28);
+}
+
+/* روابط الهيدر */
+.links ,.Burger-links{
+    list-style: none;
+    width: 100%;
+    text-align: right;
+    padding: 5px 10px;
+}
+
+/* عناصر القائمة في الهيدر */
+.links li {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.Burger-links li{
+    margin: 10px 5px;
+}
+
+/* روابط القائمة في الهيدر */
+.links li a,.Burger-links li a {
+    font-weight: 700;
+    color: var(--color-1);
+    text-decoration: none;
+    font-size: var(--font-size-16);
+    transition: var(--transition-duration-08);
+    -webkit-transition: var(--transition-duration-08);
+    -moz-transition: var(--transition-duration-08);
+    -ms-transition: var(--transition-duration-08);
+    -o-transition: var(--transition-duration-08);
+}
+
+/* تحويل روابط القائمة عند التحويل بالماوس */
+.links li a:hover,.Burger-links li a:hover {
+    text-decoration: underline #ffffff;
+    letter-spacing: 0.5px;
+    color: var(--color-4);
+}
+
+/* نص التقديم في الهيدر */
+.landing-page .introduction-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    color: var(--color-1);
+    z-index: 2;
+    text-align: center;
+    width: 90%;
+}
+
+/* نص الفقرة في التقديم */
+.landing-page .introduction-text p {
+    line-height: 25px;
+    width: 60%;
+    margin: auto;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 250px;
+    height: 100vh;
+    background-color: #3333334e;
+    transition: left 0.5s;
+    z-index: 8;
+    -webkit-transition: left 0.5s;
+    -moz-transition: left 0.5s;
+    -ms-transition: left 0.5s;
+    -o-transition: left 0.5s;
+}
+.sidebar.open {
+    right: 0;
+    padding: 35px 20px;
+}
+.Burger {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    background-color: #ffffff00;
+    font-weight: bold;
+    font-size: large;
+    cursor: pointer;
+    z-index: 10;
+    transition: transform 2s;
+    display: none;
+    outline: none;
+    outline-style: none;
+    color: var(--color-4);
+}
+.sidebar.open .Burger {
+    transform: rotate(180deg);
+}
+
+/*/////////////////////// About Us Section Styles ///////////////////////*/
+
+/* تنسيق قسم من نحن */
+.about-us {
+    width: 100%;
+    height: 100vh;
+    padding: 20px 0px;
+    text-transform: capitalize;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* حاوية القسم */
+.about-us .container-about {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+    color: var(--color-1);
+}
+
+/* معلومات من نحن */
+.about-us .container-about .info-about {
+    width: 55%;
+    padding: 0 20px;
+}
+
+/* عنوان من نحن */
+.about-us .container-about .info-about h2 {
+    font-size: var(--font-size-28);
+}
+
+/* نص من نحن */
+.about-us .container-about .info-about p {
+    font-size: var(--font-size-16);
+    line-height: 25px;
+}
+
+/* صورة من نحن */
+.about-us .container-about .info-img {
+    width: 45%;
+    text-align: center;
+}
+
+/* صورة داخل قسم من نحن */
+.about-us .container-about .info-img img {
+    max-width: 100%;
+    height: auto;
+}
+/*/////////////////////// Skills Section Styles ///////////////////////*/
+
+/* تنسيق قسم المهارات */
+.skills {
+    background-color: var(--background-color-sub);
+    width: 100%;
+    height: fit-content;
+    min-height: 100vh;
+    padding: 20px 0px;
+    text-transform: capitalize;
+}
+
+/* حاوية قسم المهارات */
+.skills .container-skills {
+    width: 90%;
+    margin: auto;
+    color: var(--color-1);
+}
+
+/* عنوان قسم المهارات */
+.skills .container-skills h2 {
+    font-size: var(--font-size-28);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* صناديق المهارات */
+.skills .skills-box {
+    width: 90%;
+    margin: auto;
+    color: var(--color-1);
+    background-color: var(--background-color-main);
+    padding: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+    box-shadow: var(--box-shadow-2);
+}
+
+/* اسم المهارة */
+.skills .skills-box .skill-name {
+    text-align: center;
+    width: 30%;
+    font-weight: bold;
+}
+
+/* شريط العمل (Progress bar) */
+.skills .skills-box .skill-progress {
+    width: 100%;
+    background-color: var(--background-color-sub);
+    position: relative;
+    border-radius: 12px;
+}
+
+/* تقدم المهارة (Progress) */
+.skills .skills-box .skill-progress span {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: var(--color-4);
+    border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    -ms-border-radius: 7px;
+    -o-border-radius: 7px;
+    transition: 2s;
+    -webkit-transition: 2s;
+    -moz-transition: 2s;
+    -ms-transition: 2s;
+    -o-transition: 2s;
+}
+
+
+/*/////////////////////// Gallery Section Styles ///////////////////////*/
+
+/* تنسيق قسم المعرض */
+.gallery {
+    width: 100%;
+    height: fit-content;
+    min-height: 100vh;
+    padding: 20px 0px;
+    text-transform: capitalize;
+    color: var(--color-1);
+}
+
+/* عنوان قسم المعرض */
+.gallery h2 {
+    font-size: var(--font-size-28);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* حاوية الصور في قسم المعرض */
+.gallery .gallery-box {
+    text-align: center;
+}
+
+/* الصور في قسم المعرض */
+.gallery .gallery-box img {
+    width: 200px;
+    border: var(--border-4);
+    border-radius: 7px;
+    margin: 5px;
+    cursor: pointer;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    -ms-border-radius: 7px;
+    -o-border-radius: 7px;
+}
+
+/* تنسيق الطبقة الظليلة للعرض المنبثق */
+.popup-overlay {
+    position: fixed;
+    background-color: hsla(0, 0%, 0%, 0.8);
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 9;
+}
+
+/* تنسيق مربع العرض المنبثق */
+.popup-box {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    background-color: var(--background-color-white);
+    border: var(--border-4);
+    padding: 20px;
+    z-index: 10;
+}
+
+/* تنسيق الصور داخل مربع العرض المنبثق */
+.popup-box img {
+    width: 100%;
+}
+
+/* أسلوب تنسيق زر الإغلاق */
+.popup-close {
+    position: absolute;
+    text-align: center;
+    top: -45px;
+    right: -45px;
+    cursor: pointer;
+    font-size: var(--font-size-28);
+    font-weight: bolder;
+    color: var(--color-4);
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+/* /////////////////////////// Features Section Styles /////////////////////////// */
+
+/* تنسيق خصائص العناصر */
+.features {
+    background-color: var(--background-color-sub);
+    width: 100%;
+    height: auto; 
+    padding: 20px 0px;
+    text-transform: capitalize;
+    color: var(--color-1);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(auto, 1fr));
+    gap: 20px; 
+}
+
+/* تنسيق عنوان الميزات */
+.features h2 {
+    font-size: var(--font-size-28);
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+/* تنسيق صناديق الميزات */
+.features .features-box {
+    width: calc(100% / 3);
+    float: left;
+    text-align: center;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    flex-grow: 1;
+}
+
+/* تنسيق الصور داخل صناديق الميزات */
+.features .features-box img {
+    width: 120px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    background-color: var(--background-color-main);
+    padding: 4px;
+    border: var(--border-4);
+}
+
+/* تنسيق عنوان صناديق الميزات */
+.features .features-box h4 {
+    font-size: var(--font-size-20);
+    margin: 15px 0 40px;
+    position: relative;
+}
+
+/* تنسيق خط سفلي لعناوين صناديق الميزات */
+.features .features-box h4:before {
+    content: '';
+    width: 40px;
+    height: 4px;
+    background-color: var(--color-4);
+    position: absolute;
+    left: 50%;
+    margin-left: -20px;
+    bottom: -18px;
+}
+
+/* تنسيق النص داخل صناديق الميزات */
+.features .features-box p {
+    width: 80%;
+    margin: 0 auto;
+    line-height: 25px;
+}
+
+/* /////////////////////////// testimonials Section Styles /////////////////////////// */
+
+/* قسم التوصيات */
+.testimonials {
+    padding: 20px 25px;
+    text-align: center;
+    color: var(--color-1);
+    background-color: var(--background-color-sub);
+
+}
+
+/* عنوان التوصيات */
+.testimonials h2 {
+    font-size: var(--font-size-28);
+    margin-top: 40px;
+    text-align: center;
+    width: 100%;
+    text-transform: capitalize;
+}
+
+/* حاوية التوصيات */
+.container-testimonials {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow-y: scroll;
+    height: 100vh;
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+}
+
+/* صندوق التوصية */
+.testimonials-box {
+    background-color: var(--background-color-white);
+    border-radius: 12px;
+    box-shadow: var(--box-shadow-2);
+    padding: 20px;
+    margin: 20px 15px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+    border: var(--border-4);
+    display: inline-block;
+    width: 280px;
+    max-height: 450px;
+}
+
+/* نص التوصية */
+.testimonials-box p {
+    font-size: var(--font-size-18);
+    margin-bottom: 20px;
+    color: var(--color-2);
+    text-transform: capitalize;
+}
+
+/* صورة مؤلف التوصية */
+.box-info img {
+    max-width: 100px;
+    border-radius: 50%;
+}
+
+/* اسم مؤلف التوصية */
+.box-info h4 {
+    font-size: var(--font-size-20);
+    padding: 10px 0;
+    color: var(--color-2);
+    text-transform: capitalize;
+    margin-bottom: 10px;
+
+}
+
+/* منصب مؤلف التوصية */
+.box-info p {
+    font-size: var(--font-size-16);
+    color: var(--color-7);
+    text-transform: uppercase;
+}
+
+
+
+/* Media Queries for Small Screens (max-width: 760px) */
+
+@media screen and (max-width: 760px) {
+    /* تغيير عرض النص في التقديم عندما يكون عرض الشاشة أقل من 760 بيكسل */
+    .landing-page .introduction-text p {
+        width: 90%;
+    }
+    
+    /* تغيير حجم العنوان في التقديم عندما يكون عرض الشاشة أقل من 760 بيكسل */
+    .landing-page .introduction-text h1 {
+        font-size: var(--font-size-24);
+    }
+
+    /* تغيير توجيه العناصر داخل حاوية من نحن عندما يكون عرض الشاشة أقل من 760 بيكسل */
+    .about-us .container-about {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /* تغيير عرض الصورة داخل حاوية من نحن عندما يكون عرض الشاشة أقل من 760 بيكسل */
+    .about-us .container-about .info-img {
+        width: 60%;
+        margin: auto;
+    }
+
+    /* تغيير عرض معلومات من نحن عندما يكون عرض الشاشة أقل من 760 بيكسل */
+    .about-us .container-about .info-about {
+        width: 100%;
+    }
+    /* تغيير عرض  الخطط المستقبلية عندما يكون عرض الشاشة أقل من 760 بيكسل */
+    .features .features-box{
+        width: 100%;
+    }    
+    /* تغيير عرض صندوق التوصية  عندما يكون عرض الشاشة أقل من 760 بيكسل */
+    .testimonials-box {
+        max-width: 80%;
+        margin: 15px auto;
+    }
+    .Burger{
+        display: block;
+    }
+    .links{
+        display: none;
+    }
+}
