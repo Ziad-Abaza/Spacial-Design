@@ -7,7 +7,6 @@ This is the README file for a web design and development project. The project co
 - [File Structure](#file-structure)
 - [Features](#features)
 - [How to Use](#how-to-use)
-- [License](#license)
 
 ## Project Overview
 This project is a responsive website template for a creative agency. It features a landing page with a slideshow, various sections such as "About Us," "Skills," "Gallery," "Features," and "Testimonials," and a settings panel for customizing the website's appearance.
@@ -38,5 +37,3 @@ To use this website template, you can follow these steps:
 3. Customize the content, images, and styles in the HTML, CSS, and JavaScript files as needed to fit your project requirements.
 4. Host the website on a web server to make it accessible online.
 
-## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
