@@ -12,22 +12,22 @@ window.onload = () => {
     // متغير للتحكم في المؤقت (المُسمى backgroundInterval)
     let backgroundInterval;
 
-    document.querySelectorAll('.background-option span').forEach(Element=>{
+    document.querySelectorAll('.background-option span').forEach(Element => {
         Element.classList.remove('active');
     });
-    
-    if(getBackgroundOption !== null){
-        if(getBackgroundOption==='yes'){
+
+    if (getBackgroundOption !== null) {
+        if (getBackgroundOption === 'yes') {
             backgroundStory = true;
             document.querySelector('.background-option .yes').classList.add('active');
         }
-        else{
-            backgroundStory=false;
+        else {
+            backgroundStory = false;
             document.querySelector('.background-option .no').classList.add('active');
         }
 
-    }else{
-        backgroundStory= true;
+    } else {
+        backgroundStory = true;
     }
 
     // دالة لبدء حركة السلايد
@@ -64,15 +64,15 @@ window.onload = () => {
                 slideShow();
             } else {
                 backgroundStory = false;
-                clearInterval(backgroundInterval); 
+                clearInterval(backgroundInterval);
                 slideShow();
             }
             //  وتعيين الخلفية المحفوظ في التخزين المحلي (localStorage)
             localStorage.setItem("background-option", e.target.dataset.background);
-            
+
         });
     });
-        
+
 
     ///////////////////     Slide Bar Settings (إعدادات شريط الإعدادات)     ////////////////
 
@@ -116,139 +116,321 @@ window.onload = () => {
 
     ///////////////////     Background color (لون الخلفية)     ////////////////
 
-// العناصر المتعلقة بلون الخلفية
-const setBackground = document.querySelectorAll('.backcolors-list li');
-setBackground.forEach(li => {
-    li.addEventListener("click", (e) => {
-        // تعيين اللون المحدد كمتغير في الجذر (الجذر الأساسي للصفحة)
-        document.documentElement.style.setProperty('--background-color-main', e.target.dataset.backcolor);
-        localStorage.setItem("background-color", e.target.dataset.backcolor);
+    // العناصر المتعلقة بلون الخلفية
+    const setBackground = document.querySelectorAll('.backcolors-list li');
+    setBackground.forEach(li => {
+        li.addEventListener("click", (e) => {
+            // تعيين اللون المحدد كمتغير في الجذر (الجذر الأساسي للصفحة)
+            document.documentElement.style.setProperty('--background-color-main', e.target.dataset.backcolor);
+            localStorage.setItem("background-color", e.target.dataset.backcolor);
 
-        // إزالة الكلاس 'setColor' من جميع العناصر الأخرى
-        e.target.parentElement.querySelectorAll('.setColor').forEach(Element => {
-            Element.classList.remove('setColor');
+            // إزالة الكلاس 'setColor' من جميع العناصر الأخرى
+            e.target.parentElement.querySelectorAll('.setColor').forEach(Element => {
+                Element.classList.remove('setColor');
+            });
+
+            // إضافة الكلاس 'setColor' إلى العنصر الحالي
+            e.target.classList.add('setColor');
         });
-
-        // إضافة الكلاس 'setColor' إلى العنصر الحالي
-        e.target.classList.add('setColor');
     });
-});
 
-// استرجاع وتعيين لون الخلفية المحفوظ في التخزين المحلي (localStorage)
-let backgroundColor = localStorage.getItem("background-color");
-if (backgroundColor !== null) {
-    document.documentElement.style.setProperty("--background-color-main", backgroundColor);
-} else {
-    document.documentElement.style.setProperty("--background-color-main", "#02617b");
-}
-
-/////////////////// Skills Selector ///////////////////
-
-// الحصول على عناصر شريط العمل ومهارات المهارات
-const skillProgressBars = document.querySelectorAll(".skill-progress span");
-
-// دالة لتحريك شريط العمل
-function animateProgressBar() {
-    skillProgressBars.forEach(progressBar => {
-        // الحصول على قيمة النسبة من السمة "data-progress"
-        const progress = progressBar.getAttribute("data-progress");
-        progressBar.style.width = progress; // تحديث عرض شريط العمل بناءً على القيمة المحددة
-    });
-}
-
-// القيام بتنفيذ الدالة عندما يتم التمرير إلى قسم المهارات
-window.addEventListener("scroll", function () {
-    // الحصول على عنصر قسم المهارات
-    const skillsSection = document.querySelector(".skills");
-    
-    // حساب موقع قسم المهارات بالنسبة لأعلى الصفحة
-    const skillsSectionTop = skillsSection.offsetTop;
-    
-    // ارتفاع نافذة المستعرض
-    const windowHeight = window.innerHeight;
-    
-    // موقع النص الحالي على الصفحة
-    const scrollY = window.scrollY;
-
-    // التحقق إذا كان تمرير الصفحة إلى منتصف قسم المهارات
-    if (scrollY > skillsSectionTop - windowHeight / 2) {
-        // تنفيذ دالة تحريك شريط العمل
-        animateProgressBar();
+    // استرجاع وتعيين لون الخلفية المحفوظ في التخزين المحلي (localStorage)
+    let backgroundColor = localStorage.getItem("background-color");
+    if (backgroundColor !== null) {
+        document.documentElement.style.setProperty("--background-color-main", backgroundColor);
+    } else {
+        document.documentElement.style.setProperty("--background-color-main", "#02617b");
     }
-});
 
-/////////////////// Gallery popup ///////////////////
+    /////////////////// Skills Selector ///////////////////
 
-// الحصول على جميع الصور في قسم المعرض
-const galleryImages = document.querySelectorAll('.gallery-box img');
+    // الحصول على عناصر شريط العمل ومهارات المهارات
+    const skillProgressBars = document.querySelectorAll(".skill-progress span");
 
-// تفعيل واجهة المستخدم للصور في قسم المعرض
-galleryImages.forEach((img) => {
-    img.onclick = function () {
-        // إنشاء الطبقة الظليلة للعرض المنبثق
-        const overlay = document.createElement('div');
-        overlay.className = 'popup-overlay';
+    // دالة لتحريك شريط العمل
+    function animateProgressBar() {
+        skillProgressBars.forEach(progressBar => {
+            // الحصول على قيمة النسبة من السمة "data-progress"
+            const progress = progressBar.getAttribute("data-progress");
+            progressBar.style.width = progress; // تحديث عرض شريط العمل بناءً على القيمة المحددة
+        });
+    }
 
-        // إنشاء مربع العرض المنبثق
-        const popupBox = document.createElement('div');
-        popupBox.classList.add('popup-box');
+    // القيام بتنفيذ الدالة عندما يتم التمرير إلى قسم المهارات
+    window.addEventListener("scroll", function () {
+        // الحصول على عنصر قسم المهارات
+        const skillsSection = document.querySelector(".skills");
 
-        // إنشاء عنصر الصورة في مربع العرض المنبثق وتعيين مصدر الصورة إلى مصدر الصورة الأصلي
-        const popupImg = document.createElement('img');
-        popupImg.src = img.src;
-        popupBox.appendChild(popupImg);
+        // حساب موقع قسم المهارات بالنسبة لأعلى الصفحة
+        const skillsSectionTop = skillsSection.offsetTop;
 
-        // إضافة مربع العرض المنبثق إلى الصفحة
-        document.body.appendChild(overlay);
-        document.body.appendChild(popupBox);
+        // ارتفاع نافذة المستعرض
+        const windowHeight = window.innerHeight;
 
-        // إذا كانت هناك نصوص توضيحية للصورة، قم بإنشاء عنصر العنوان وإضافته إلى مربع العرض المنبثق
-        if (img.alt !== null) {
-            const imgHeading = document.createElement('h3'); // إنشاء عنصر العنوان (h3)
-            const imgText = document.createTextNode(img.alt); // إنشاء نص العنوان بناءً على النص الموجود في خاصية alt للصورة
-            imgHeading.appendChild(imgText); // إضافة نص العنوان إلى عنصر العنوان
-            popupBox.appendChild(imgHeading); // إضافة عنصر العنوان إلى مربع العرض المنبثق
+        // موقع النص الحالي على الصفحة
+        const scrollY = window.scrollY;
+
+        // التحقق إذا كان تمرير الصفحة إلى منتصف قسم المهارات
+        if (scrollY > skillsSectionTop - windowHeight / 2) {
+            // تنفيذ دالة تحريك شريط العمل
+            animateProgressBar();
         }
-                // إضافة زر "إغلاق" إلى مربع العرض المنبثق
-        const closeButton = document.createElement('span');
-        closeButton.className = 'popup-close';
-        closeButton.innerHTML = '&times;'; // إضافة رمز "X" للزر
-        popupBox.appendChild(closeButton);
+    });
 
-        // تفعيل إغلاق العرض عند النقر على زر "إغلاق"
-        closeButton.onclick = function () {
-            document.body.removeChild(overlay);
-            document.body.removeChild(popupBox);
+    /////////////////// Gallery popup ///////////////////
+
+    // الحصول على جميع الصور في قسم المعرض
+    const galleryImages = document.querySelectorAll('.gallery-box img');
+
+    // تفعيل واجهة المستخدم للصور في قسم المعرض
+    galleryImages.forEach((img) => {
+        img.onclick = function () {
+            // إنشاء الطبقة الظليلة للعرض المنبثق
+            const overlay = document.createElement('div');
+            overlay.className = 'popup-overlay';
+
+            // إنشاء مربع العرض المنبثق
+            const popupBox = document.createElement('div');
+            popupBox.classList.add('popup-box');
+
+            // إنشاء عنصر الصورة في مربع العرض المنبثق وتعيين مصدر الصورة إلى مصدر الصورة الأصلي
+            const popupImg = document.createElement('img');
+            popupImg.src = img.src;
+            popupBox.appendChild(popupImg);
+
+            // إضافة مربع العرض المنبثق إلى الصفحة
+            document.body.appendChild(overlay);
+            document.body.appendChild(popupBox);
+
+            // إذا كانت هناك نصوص توضيحية للصورة، قم بإنشاء عنصر العنوان وإضافته إلى مربع العرض المنبثق
+            if (img.alt !== null) {
+                const imgHeading = document.createElement('h3'); // إنشاء عنصر العنوان (h3)
+                const imgText = document.createTextNode(img.alt); // إنشاء نص العنوان بناءً على النص الموجود في خاصية alt للصورة
+                imgHeading.appendChild(imgText); // إضافة نص العنوان إلى عنصر العنوان
+                popupBox.appendChild(imgHeading); // إضافة عنصر العنوان إلى مربع العرض المنبثق
+            }
+            // إضافة زر "إغلاق" إلى مربع العرض المنبثق
+            const closeButton = document.createElement('span');
+            closeButton.className = 'popup-close';
+            closeButton.innerHTML = '&times;'; // إضافة رمز "X" للزر
+            popupBox.appendChild(closeButton);
+
+            // تفعيل إغلاق العرض عند النقر على زر "إغلاق"
+            closeButton.onclick = function () {
+                document.body.removeChild(overlay);
+                document.body.removeChild(popupBox);
+            };
+
+
         };
+    });
 
+    ///////////////////     Move Top Link     ///////////////////
 
-    };
-});
+    const allLinks = document.querySelectorAll('.menu li a');
 
-///////////////////     Move Top Link     ///////////////////
-
-const allLinks = document.querySelectorAll('.menu li a');
-
-allLinks.forEach(link=>{
-    link.addEventListener("click",(e)=>{
-        e.preventDefault;
-        document.querySelector(e.target.dataset.section).scrollIntoView({
-            behavior: "smooth"
+    allLinks.forEach(link => {
+        link.addEventListener("click", (e) => {
+            e.preventDefault;
+            document.querySelector(e.target.dataset.section).scrollIntoView({
+                behavior: "smooth"
+            });
         });
     });
-});
 
 
 
 
-var showSidebarButton = document.querySelector('.Burger');
-var sidebar = document.getElementById('sidebar');
+    var showSidebarButton = document.querySelector('.Burger');
+    var sidebar = document.getElementById('sidebar');
 
-showSidebarButton.addEventListener('click', function() {
-    sidebar.classList.toggle('open');
-});
+    showSidebarButton.addEventListener('click', function () {
+        sidebar.classList.toggle('open');
+    });
 
-/////////////////// تشغيل حركة السلايد عند تحميل الصفحة ///////////////////
+    /////////////////// Gallery Controls ///////////////////
+
+    // Gallery filter functionality
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    const searchInput = document.getElementById('gallerySearch');
+    const searchButton = document.querySelector('.search-btn');
+    const viewButtons = document.querySelectorAll('.view-btn');
+    const galleryBox = document.querySelector('.gallery-box');
+    const noResultsMessage = document.querySelector('.gallery-no-results');
+
+    // Filter gallery items
+    function filterGallery() {
+        const searchTerm = searchInput.value.toLowerCase();
+        const activeFilter = document.querySelector('.filter-btn.active').dataset.filter;
+        let visibleItems = 0;
+
+        galleryItems.forEach(item => {
+            const matchesCategory = activeFilter === 'all' || item.dataset.category === activeFilter;
+            const matchesSearch = item.dataset.title.toLowerCase().includes(searchTerm) ||
+                                item.querySelector('h4').textContent.toLowerCase().includes(searchTerm);
+            
+            if (matchesCategory && matchesSearch) {
+                item.style.display = 'block';
+                visibleItems++;
+            } else {
+                item.style.display = 'none';
+            }
+        });
+
+        // Show/hide no results message
+        noResultsMessage.style.display = visibleItems === 0 ? 'block' : 'none';
+    }
+
+    // Filter button click handler
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Remove active class from all buttons
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            // Add active class to clicked button
+            button.classList.add('active');
+            // Apply filters
+            filterGallery();
+        });
+    });
+
+    // Search functionality
+    function handleSearch() {
+        filterGallery();
+    }
+
+    // Search button click handler
+    searchButton.addEventListener('click', handleSearch);
+    
+    // Search on Enter key
+    searchInput.addEventListener('keyup', (e) => {
+        if (e.key === 'Enter') {
+            handleSearch();
+        }
+    });
+
+    // View toggle functionality
+    viewButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Remove active class from all view buttons
+            viewButtons.forEach(btn => btn.classList.remove('active'));
+            // Add active class to clicked button
+            button.classList.add('active');
+            // Update gallery layout
+            galleryBox.className = 'gallery-box ' + button.dataset.view;
+        });
+    });
+
+    // Initialize gallery with default view
+    document.querySelector('.view-btn[data-view="grid"]').click();
+
+    /////////////////// Testimonials Slider ///////////////////
+
+    function testimonialsSlider() {
+        const sliderWrapper = document.querySelector('.testimonials-wrapper');
+        const sliderItems = document.querySelectorAll('.testimonials-item');
+        const dots = document.querySelectorAll('.dot');
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+
+        if (!sliderWrapper || sliderItems.length === 0) return;
+
+        let currentSlide = 0;
+        const totalSlides = sliderItems.length;
+        let slideInterval;
+
+        // Go to specific slide
+        function goToSlide(index) {
+            if (index < 0) {
+                currentSlide = totalSlides - 1;
+            } else if (index >= totalSlides) {
+                currentSlide = 0;
+            } else {
+                currentSlide = index;
+            }
+
+            // Move Wrapper
+            const offset = currentSlide * -100;
+            sliderWrapper.style.transform = `translateX(${offset}%)`;
+
+            // Update Dots
+            dots.forEach(dot => dot.classList.remove('active'));
+            if (dots[currentSlide]) {
+                dots[currentSlide].classList.add('active');
+            }
+        }
+
+        // Next Slide
+        function nextSlide() {
+            goToSlide(currentSlide + 1);
+        }
+
+        // Previous Slide
+        function prevSlide() {
+            goToSlide(currentSlide - 1);
+        }
+
+        // Event Listeners for Buttons
+        if (nextBtn) nextBtn.addEventListener('click', () => {
+            nextSlide();
+            resetTimer();
+        });
+
+        if (prevBtn) prevBtn.addEventListener('click', () => {
+            prevSlide();
+            resetTimer();
+        });
+
+        // Event Listeners for Dots
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                goToSlide(index);
+                resetTimer();
+            });
+        });
+
+        // Auto Play
+        function startTimer() {
+            slideInterval = setInterval(nextSlide, 5000);
+        }
+
+        function resetTimer() {
+            clearInterval(slideInterval);
+            startTimer();
+        }
+
+        // Initialize
+        startTimer();
+
+        // Swipe Support for Touch Devices
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        sliderWrapper.addEventListener('touchstart', e => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        sliderWrapper.addEventListener('touchend', e => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, { passive: true });
+
+        function handleSwipe() {
+            if (touchEndX < touchStartX - 50) {
+                nextSlide(); // Swipe Left
+                resetTimer();
+            }
+            if (touchEndX > touchStartX + 50) {
+                prevSlide(); // Swipe Right
+                resetTimer();
+            }
+        }
+    }
+
+    // Initialize Slider
+    testimonialsSlider();
+
+    /////////////////// تشغيل حركة السلايد عند تحميل الصفحة ///////////////////
 
     slideShow();
 }

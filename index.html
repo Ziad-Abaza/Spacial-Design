@@ -1,251 +1,654 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <meta name="description"
+        content="Spacial Design - Creative agency specializing in web development, UI/UX design, and digital solutions">
+    <meta name="keywords" content="web design, development, creative agency, UI, UX, digital solutions">
+    <meta name="author" content="Spacial Design">
+    <title>Spacial Design - Creative Digital Agency</title>
+    <!-- Font Awesome 6.4.0 CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Local Font Awesome 4.7.0 as fallback -->
+    <link rel="stylesheet" href="css/font-awesome.min.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/master.css">
-    <script src="js/master.js"></script>
-    <title>Document</title>
+    <script src="master.js"></script>
 </head>
+
 <body>
-<!-- Setting Box -->
-<div class="setting-box">
-    <!-- Gear Icon Container -->
-    <div class="container-gear">
-        <i class="fa fa-gear fa-spin"></i>
-    </div>
+    <!-- Setting Box -->
+    <aside class="setting-box" role="complementary" aria-label="Settings">
+        <!-- Gear Icon Container -->
+        <button class="container-gear" aria-label="Toggle settings panel" aria-expanded="false">
+            <i class="fa fa-gear fa-spin"></i>
+        </button>
 
-    <!-- Setting Options Container -->
-    <div class="setting-container">
-        <!-- Colors Option -->
-        <div class="option-box">
-            <h4>Colors</h4>
-            <ul class="colors-list">
-                <li class="mainOption" data-color="#ff6600"></li>
-                <li data-color="#6c35da"></li>
-                <li data-color="#ffffff"></li>
-                <li data-color="#f9003e"></li>
-                <li data-color="#0011ff"></li>
+        <!-- Setting Options Container -->
+        <div class="setting-container">
+            <!-- Colors Option -->
+            <div class="option-box">
+                <h4>Colors</h4>
+                <ul class="colors-list">
+                    <li class="mainOption" data-color="#ff6600"></li>
+                    <li data-color="#6c35da"></li>
+                    <li data-color="#ffffff"></li>
+                    <li data-color="#f9003e"></li>
+                    <li data-color="#0011ff"></li>
+                </ul>
+            </div>
+
+            <!-- Move Background Option -->
+            <div class="option-box">
+                <h4>Move Background</h4>
+                <div class="background-option">
+                    <span class="yes active" data-background="yes">Yes</span>
+                    <span class="no" data-background="no">NO</span>
+                </div>
+            </div>
+
+            <!-- Background Colors Option -->
+            <div class="option-box">
+                <h4>Background Color</h4>
+                <ul class="backcolors-list">
+                    <li class="setColor" data-backColor="#345"></li>
+                    <li data-backColor="#6c35da"></li>
+                    <li data-backColor="#ff7799"></li>
+                    <li data-backColor="#ff4433"></li>
+                    <li data-backColor="#009688"></li>
+                </ul>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Header Section -->
+    <header class="landing-page" role="banner">
+        <div class="overlay"></div>
+
+        <!-- Header Area -->
+        <nav class="header-area" role="navigation" aria-label="Main navigation">
+            <div class="logo" aria-label="Spacial Design Logo">spacial<span> design</span></div>
+            <ul class="links menu" role="menubar">
+                <li role="none"><a href="#" data-section=".about-us" role="menuitem">About Us</a></li>
+                <li role="none"><a href="#" data-section=".skills" role="menuitem">Skills</a></li>
+                <li role="none"><a href="#" data-section=".gallery" role="menuitem">gallery</a></li>
+                <li role="none"><a href="#" data-section=".features" role="menuitem">features</a></li>
+                <li role="none"><a href="#" data-section=".testimonials" role="menuitem">testimonials</a></li>
+                <li role="none"><a href="#" data-section=".contact" role="menuitem">Contact</a></li>
             </ul>
-        </div>
+        </nav>
 
-        <!-- Move Background Option -->
-        <div class="option-box">
-            <h4>Move Background</h4>
-            <div class="background-option">
-                <span class="yes active" data-background="yes">Yes</span>
-                <span class="no" data-background="no">NO</span>
-            </div>
-        </div>
-
-        <!-- Background Colors Option -->
-        <div class="option-box">
-            <h4>Background Color</h4>
-            <ul class="backcolors-list">
-                <li class="setColor" data-backColor="#345"></li>
-                <li data-backColor="#6c35da"></li>
-                <li data-backColor="#ff7799"></li>
-                <li data-backColor="#ff4433"></li>
-                <li data-backColor="#009688"></li>
+        <!-- Mobile Menu Toggle -->
+        <button class="Burger" aria-label="Toggle mobile menu" aria-expanded="false">&#9776</button>
+        <nav class="sidebar" id="sidebar" role="navigation" aria-label="Mobile navigation">
+            <ul class="Burger-links menu" role="menubar">
+                <li role="none"><a href="#" data-section=".about-us" role="menuitem">About Us</a></li>
+                <li role="none"><a href="#" data-section=".skills" role="menuitem">Skills</a></li>
+                <li role="none"><a href="#" data-section=".gallery" role="menuitem">gallery</a></li>
+                <li role="none"><a href="#" data-section=".features" role="menuitem">features</a></li>
+                <li role="none"><a href="#" data-section=".testimonials" role="menuitem">testimonials</a></li>
+                <li role="none"><a href="#" data-section=".contact" role="menuitem">Contact</a></li>
             </ul>
-        </div>
-    </div>
-</div>
+        </nav>
 
-<!-- Header Section -->
-<div class="landing-page">
-    <div class="overlay"></div>
-    
-    <!-- Header Area -->
-    <div class="header-area">
-        <div class="logo">spacial<span> design</span></div>
-        <ul class="links menu">
-            <li><a href="#" data-section=".about-us">About Us</a></li>
-            <li><a href="#" data-section=".skills">Skills</a></li>
-            <li><a href="#" data-section=".gallery">gallery</a></li>
-            <li><a href="#" data-section=".features">features</a></li>
-            <li><a href="#" data-section=".testimonials">testimonials</a></li>
-        </ul>
-    </div>
+        <!-- Hero Section -->
+        <section class="introduction-text" role="main">
+            <h1>We are <span>creative</span> agency</h1>
+            <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis temporibus voluptate voluptatum
+                numquam quaerat reiciendis quam vitae perspiciatis nam ad odit, tenetur aut, maxime explicabo blanditiis
+                suscipit tempore sunt. Officiis.
+            </p>
+        </section>
+    </header>
 
-    <!-- Burger -->
-<div class="Burger">&#9776</div>
-<div class="sidebar" id="sidebar">
-    <ul class="Burger-links menu">
-        <li><a href="#" data-section=".about-us">About Us</a></li>
-        <li><a href="#" data-section=".skills">Skills</a></li>
-        <li><a href="#" data-section=".gallery">gallery</a></li>
-        <li><a href="#" data-section=".features">features</a></li>
-        <li><a href="#" data-section=".testimonials">testimonials</a></li>
-    </ul>
-</div>
-    
-    <!-- Container for Page Text -->
-    <div class="introduction-text">
-        <h1>We are <span>creative</span> agency</h1>
-        <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis temporibus voluptate voluptatum numquam quaerat reiciendis quam vitae perspiciatis nam ad odit, tenetur aut, maxime explicabo blanditiis suscipit tempore sunt. Officiis.
-        </p>
-    </div>
-</div>
-
-<!-- About Us Section -->
-<div class="about-us">
-    <div class="container-about">
-        <div class="info-about">
-            <h2>About <span>Us</span></h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, blanditiis labore deserunt, ea error eum odio, perferendis possimus repellat iusto exercitationem autem. Quam quos, reiciendis provident animi ab placeat. Nemo.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, unde eius. Nihil iusto, ut at, voluptates nemo id debitis earum ex facilis reprehenderit tempore aut eum! Dolore natus atque officia.</p>
-        </div>
-        <div class="info-img">
-            <img src="images/validation.png" alt="">
-        </div>
-    </div>
-</div>
-<!-- Skills Section -->
-<div class="skills">
-    <div class="container-skills">
-        <h2>Our <span>Skills</span></h2>
-        
-        <!-- HTML Skill -->
-        <div class="skills-box">
-            <div class="skill-name">HTML</div>
-            <div class="skill-progress">
-                <span data-progress="100%"></span>
+    <!-- About Us Section -->
+    <section class="about-us" id="about" role="region" aria-labelledby="about-heading">
+        <div class="container-about">
+            <div class="info-about">
+                <h2 id="about-heading">About <span>Us</span></h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, blanditiis labore deserunt, ea
+                    error eum odio, perferendis possimus repellat iusto exercitationem autem. Quam quos, reiciendis
+                    provident animi ab placeat. Nemo.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, unde eius. Nihil iusto, ut at,
+                    voluptates nemo id debitis earum ex facilis reprehenderit tempore aut eum! Dolore natus atque
+                    officia.</p>
+            </div>
+            <div class="info-img">
+                <img src="images/validation.png" alt="About Us - Spacial Design Team" loading="lazy">
             </div>
         </div>
+    </section>
 
-        <!-- CSS Skill -->
-        <div class="skills-box">
-            <div class="skill-name">CSS</div>
-            <div class="skill-progress">
-                <span data-progress="70%"></span>
+    <!-- Skills Section -->
+    <section class="skills" id="skills" role="region" aria-labelledby="skills-heading">
+        <div class="container-skills">
+            <h2 id="skills-heading">Our <span>Skills</span></h2>
+            <p class="section-subtitle">We excel in various technologies and continuously improve our expertise</p>
+            
+            <div class="skills-grid">
+                <!-- HTML Skill -->
+                <div class="skills-box" data-skill-level="expert">
+                    <div class="skill-header">
+                        <i class="fa-brands fa-html5" aria-hidden="true" title="HTML5"></i>
+                        <div class="skill-name">HTML5</div>
+                        <div class="skill-percent">100%</div>
+                    </div>
+                    <div class="skill-progress">
+                        <div class="progress-bar" style="width: 100%;">
+                            <div class="progress-tooltip">Expert Level</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CSS Skill -->
+                <div class="skills-box" data-skill-level="advanced">
+                    <div class="skill-header">
+                        <i class="fa-brands fa-css3-alt" aria-hidden="true" title="CSS3"></i>
+                        <div class="skill-name">CSS3</div>
+                        <div class="skill-percent">85%</div>
+                    </div>
+                    <div class="skill-progress">
+                        <div class="progress-bar" style="width: 85%;">
+                            <div class="progress-tooltip">Advanced Level</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- JavaScript Skill -->
+                <div class="skills-box" data-skill-level="intermediate">
+                    <div class="skill-header">
+                        <i class="fa-brands fa-square-js" aria-hidden="true" title="JavaScript"></i>
+                        <div class="skill-name">JavaScript</div>
+                        <div class="skill-percent">75%</div>
+                    </div>
+                    <div class="skill-progress">
+                        <div class="progress-bar" style="width: 75%;">
+                            <div class="progress-tooltip">Intermediate Level</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- React Skill -->
+                <div class="skills-box" data-skill-level="intermediate">
+                    <div class="skill-header">
+                        <i class="fa-brands fa-react" aria-hidden="true" title="React"></i>
+                        <div class="skill-name">React</div>
+                        <div class="skill-percent">70%</div>
+                    </div>
+                    <div class="skill-progress">
+                        <div class="progress-bar" style="width: 70%;">
+                            <div class="progress-tooltip">Intermediate Level</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Node.js Skill -->
+                <div class="skills-box" data-skill-level="intermediate">
+                    <div class="skill-header">
+                        <i class="fa-brands fa-node-js" aria-hidden="true" title="Node.js"></i>
+                        <div class="skill-name">Node.js</div>
+                        <div class="skill-percent">65%</div>
+                    </div>
+                    <div class="skill-progress">
+                        <div class="progress-bar" style="width: 65%;">
+                            <div class="progress-tooltip">Intermediate Level</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Python Skill -->
+                <div class="skills-box" data-skill-level="expert">
+                    <div class="skill-header">
+                        <i class="fa-brands fa-python" aria-hidden="true" title="Python"></i>
+                        <div class="skill-name">Python</div>
+                        <div class="skill-percent">95%</div>
+                    </div>
+                    <div class="skill-progress">
+                        <div class="progress-bar" style="width: 95%;">
+                            <div class="progress-tooltip">Expert Level</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Git Skill -->
+                <div class="skills-box" data-skill-level="advanced">
+                    <div class="skill-header">
+                        <i class="fa-brands fa-git-alt" aria-hidden="true" title="Git"></i>
+                        <div class="skill-name">Git</div>
+                        <div class="skill-percent">80%</div>
+                    </div>
+                    <div class="skill-progress">
+                        <div class="progress-bar" style="width: 80%;">
+                            <div class="progress-tooltip">Advanced Level</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Responsive Design Skill -->
+                <div class="skills-box" data-skill-level="expert">
+                    <div class="skill-header">
+                        <i class="fa-solid fa-mobile-screen" aria-hidden="true" title="Responsive Design"></i>
+                        <div class="skill-name">Responsive Design</div>
+                        <div class="skill-percent">90%</div>
+                    </div>
+                    <div class="skill-progress">
+                        <div class="progress-bar" style="width: 90%;">
+                            <div class="progress-tooltip">Expert Level</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="skill-levels-legend">
+                <div class="legend-item">
+                    <span class="legend-color beginner"></span>
+                    <span>Beginner (0-40%)</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color intermediate"></span>
+                    <span>Intermediate (41-70%)</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color advanced"></span>
+                    <span>Advanced (71-90%)</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color expert"></span>
+                    <span>Expert (91-100%)</span>
+                </div>
             </div>
         </div>
+    </section>
 
-        <!-- JavaScript Skill -->
-        <div class="skills-box">
-            <div class="skill-name">JavaScript</div>
-            <div class="skill-progress">
-                <span data-progress="30%"></span>
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery" role="region" aria-labelledby="gallery-heading">
+        <div class="container-gallery">
+            <h2 id="gallery-heading">our <span>gallery</span></h2>
+            
+            <!-- Gallery Controls -->
+            <div class="gallery-controls">
+                <!-- Search Bar -->
+                <div class="gallery-search">
+                    <input type="text" id="gallerySearch" placeholder="Search gallery..." aria-label="Search gallery">
+                    <button class="search-btn" aria-label="Search">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+                
+                <!-- Filter Buttons -->
+                <div class="gallery-filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="app">Apps</button>
+                    <button class="filter-btn" data-filter="book">Books</button>
+                    <button class="filter-btn" data-filter="branding">Branding</button>
+                </div>
+                
+                <!-- View Toggle -->
+                <div class="gallery-view-toggle">
+                    <button class="view-btn active" data-view="grid" aria-label="Grid view">
+                        <i class="fa fa-th"></i>
+                    </button>
+                    <button class="view-btn" data-view="masonry" aria-label="Masonry view">
+                        <i class="fa fa-th-large"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Gallery Grid -->
+            <div class="gallery-box">
+                <div class="gallery-item" data-category="app" data-title="Mobile App Design Project 1">
+                    <img src="images/product/app-1.jpg" alt="Mobile App Design Project 1" loading="lazy">
+                    <div class="item-overlay">
+                        <h4>App Design 1</h4>
+                        <p>Mobile application</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="app" data-title="Mobile App Design Project 2">
+                    <img src="images/product/app-2.jpg" alt="Mobile App Design Project 2" loading="lazy">
+                    <div class="item-overlay">
+                        <h4>App Design 2</h4>
+                        <p>Mobile application</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="app" data-title="Mobile App Design Project 3">
+                    <img src="images/product/app-3.jpg" alt="Mobile App Design Project 3" loading="lazy">
+                    <div class="item-overlay">
+                        <h4>App Design 3</h4>
+                        <p>Mobile application</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="book" data-title="Book Design Project 2">
+                    <img src="images/product/books-2.jpg" alt="Book Design Project 2" loading="lazy">
+                    <div class="item-overlay">
+                        <h4>Book Design 2</h4>
+                        <p>Print design</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="book" data-title="Book Design Project 3">
+                    <img src="images/product/books-3.jpg" alt="Book Design Project 3" loading="lazy">
+                    <div class="item-overlay">
+                        <h4>Book Design 3</h4>
+                        <p>Print design</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="branding" data-title="Branding Design Project 1">
+                    <img src="images/product/branding-1.jpg" alt="Branding Design Project 1" loading="lazy">
+                    <div class="item-overlay">
+                        <h4>Branding 1</h4>
+                        <p>Brand identity</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="branding" data-title="Branding Design Project 2">
+                    <img src="images/product/branding-2.jpg" alt="Branding Design Project 2" loading="lazy">
+                    <div class="item-overlay">
+                        <h4>Branding 2</h4>
+                        <p>Brand identity</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="branding" data-title="Branding Design Project 3">
+                    <img src="images/product/branding-3.jpg" alt="Branding Design Project 3" loading="lazy">
+                    <div class="item-overlay">
+                        <h4>Branding 3</h4>
+                        <p>Brand identity</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- No Results Message -->
+            <div class="gallery-no-results" style="display: none;">
+                <i class="fa fa-search"></i>
+                <h3>No items found</h3>
+                <p>Try adjusting your search or filter criteria</p>
             </div>
         </div>
+    </section>
 
-        <!-- PHP Skill -->
-        <div class="skills-box">
-            <div class="skill-name">PHP</div>
-            <div class="skill-progress">
-                <span data-progress="85%"></span>
+    <!-- features section -->
+    <section class="features" id="features" role="region" aria-labelledby="features-heading">
+        <div class="container-features">
+            <h2 id="features-heading">our <span>features</span></h2>
+            <!-- features 1 -->
+            <div class="features-box">
+                <img src="images/product/features(1).jpg" alt="Web Development Feature" loading="lazy">
+                <h4>Web Development</h4>
+                <p>Creating responsive, high-performance websites with cutting-edge technologies. We build custom
+                    solutions that drive your business forward and deliver exceptional user experiences across all
+                    devices.</p>
+            </div>
+            <!-- features 2 -->
+            <div class="features-box">
+                <img src="images/product/features(2).jpg" alt="UI/UX Design Feature" loading="lazy">
+                <h4>UI/UX Design</h4>
+                <p>Designing intuitive interfaces that delight users and achieve your business goals. Our user-centered
+                    approach ensures seamless interactions and visually stunning experiences that convert visitors into
+                    customers.</p>
+            </div>
+            <!-- features 3 -->
+            <div class="features-box">
+                <img src="images/product/features(3).jpg" alt="Mobile Development Feature" loading="lazy">
+                <h4>Mobile Development</h4>
+                <p>Building powerful native and cross-platform mobile applications. From concept to deployment, we
+                    create fast, scalable mobile solutions that engage users and leverage the full potential of modern
+                    smartphones.</p>
             </div>
         </div>
+    </section>
 
-        <!-- MySQL Skill -->
-        <div class="skills-box">
-            <div class="skill-name">MySQL</div>
-            <div class="skill-progress">
-                <span data-progress="60%"></span>
+    <!-- testimonials section -->
+    <section class="testimonials" id="testimonials" role="region" aria-labelledby="testimonials-heading">
+        <div class="container-testimonials">
+            <h2 id="testimonials-heading"><span>test</span>imonials</h2>
+
+            <div class="testimonials-slider">
+                <div class="testimonials-wrapper">
+                    <!-- testimonials 1 -->
+                    <div class="testimonials-item">
+                        <div class="testimonials-box">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos officiis laudantium dolores
+                                dolorem. Quas, saepe sint ut temporibus in voluptatum autem quo adipisci similique totam
+                                eveniet repudiandae cum harum molestias!</p>
+                            <div class="box-info">
+                                <img src="images/team/blog-author-4.jpg" alt="Sara Mosaad - CEO" loading="lazy">
+                                <h4>sara mosaad</h4>
+                                <p>CEO AT Company</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- testimonials 2 -->
+                    <div class="testimonials-item">
+                        <div class="testimonials-box">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos officiis laudantium dolores
+                                dolorem. Quas, saepe sint ut temporibus in voluptatum autem quo adipisci similique totam
+                                eveniet repudiandae cum harum molestias!</p>
+                            <div class="box-info">
+                                <img src="images/team/blog-author-6.jpg" alt="Rana Ahmed - CEO" loading="lazy">
+                                <h4>rana ahmed</h4>
+                                <p>CEO AT Company</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- testimonials 3 -->
+                    <div class="testimonials-item">
+                        <div class="testimonials-box">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos officiis laudantium dolores
+                                dolorem. Quas, saepe sint ut temporibus in voluptatum autem quo adipisci similique totam
+                                eveniet repudiandae cum harum molestias!</p>
+                            <div class="box-info">
+                                <img src="images/team/blog-author-2.jpg" alt="Ola Ali - CEO" loading="lazy">
+                                <h4>ola ali</h4>
+                                <p>CEO AT Company</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="slider-btn prev-btn" aria-label="Previous testimonial">&#10094;</button>
+                <button class="slider-btn next-btn" aria-label="Next testimonial">&#10095;</button>
+
+                <div class="slider-dots">
+                    <span class="dot active" data-slide="0"></span>
+                    <span class="dot" data-slide="1"></span>
+                    <span class="dot" data-slide="2"></span>
+                </div>
             </div>
         </div>
+    </section>
 
-        <!-- Python Skill -->
-        <div class="skills-box">
-            <div class="skill-name">Python</div>
-            <div class="skill-progress">
-                <span data-progress="100%"></span>
+    <!-- Contact Section -->
+    <section class="contact" id="contact" role="region" aria-labelledby="contact-heading">
+        <div class="container-contact">
+            <h2 id="contact-heading">Get In <span>Touch</span></h2>
+            <p class="contact-subtitle">Ready to start your next project? Let's create something amazing together!</p>
+
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let's Connect</h3>
+                    <p class="contact-description">We're here to help bring your digital vision to life. Reach out to
+                        discuss your project, ask questions, or schedule a consultation.</p>
+
+                    <div class="contact-items">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fa fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Email Us</h4>
+                                <span>info@spacialdesign.com</span>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fa fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Call Us</h4>
+                                <span>+1 (555) 123-4567</span>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fa fa-map-marker"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Visit Us</h4>
+                                <span>123 Creative Street<br>Design City, DC 12345</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="business-hours">
+                        <h4>Business Hours</h4>
+                        <div class="hours-item">
+                            <span>Monday - Friday</span>
+                            <span>9:00 AM - 6:00 PM</span>
+                        </div>
+                        <div class="hours-item">
+                            <span>Saturday</span>
+                            <span>10:00 AM - 4:00 PM</span>
+                        </div>
+                        <div class="hours-item">
+                            <span>Sunday</span>
+                            <span>Closed</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" id="contactForm" novalidate>
+                        <h3>Send Us a Message</h3>
+
+                        <div class="form-group">
+                            <label for="name">Your Name *</label>
+                            <input type="text" id="name" name="name" required aria-required="true"
+                                placeholder="John Doe">
+                            <span class="error-message" id="name-error"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required aria-required="true"
+                                placeholder="john@example.com">
+                            <span class="error-message" id="email-error"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <input type="text" id="subject" name="subject" required aria-required="true"
+                                placeholder="Project Inquiry">
+                            <span class="error-message" id="subject-error"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Tell us about your project *</label>
+                            <textarea id="message" name="message" rows="5" required aria-required="true"
+                                placeholder="Describe your project goals, timeline, and any specific requirements..."></textarea>
+                            <span class="error-message" id="message-error"></span>
+                        </div>
+
+                        <div class="form-options">
+                            <div class="form-group checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="newsletter" name="newsletter">
+                                    <span class="checkmark"></span>
+                                    Subscribe to our newsletter for design tips and updates
+                                </label>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="submit-btn">
+                            <span class="btn-text">Send Message</span>
+                            <i class="fa fa-paper-plane"></i>
+                        </button>
+
+                        <div class="form-message" id="formMessage"></div>
+                    </form>
+                </div>
             </div>
         </div>
+    </section>
 
-        <!-- C Skill -->
-        <div class="skills-box">
-            <div class="skill-name">C</div>
-            <div class="skill-progress">
-                <span data-progress="25%"></span>
+    <!-- Footer Section -->
+    <footer class="footer" role="contentinfo">
+        <div class="container-footer">
+            <div class="footer-content">
+                <!-- Company Info -->
+                <div class="footer-section">
+                    <h3>Spacial Design</h3>
+                    <p>We are a creative agency specializing in web development, UI/UX design, and digital solutions
+                        that help businesses thrive in the digital world.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fa fa-github"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#" data-section=".about-us">About Us</a></li>
+                        <li><a href="#" data-section=".skills">Skills</a></li>
+                        <li><a href="#" data-section=".gallery">Gallery</a></li>
+                        <li><a href="#" data-section=".features">Features</a></li>
+                        <li><a href="#" data-section=".testimonials">Testimonials</a></li>
+                        <li><a href="#" data-section=".contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">UI/UX Design</a></li>
+                        <li><a href="#">Mobile Development</a></li>
+                        <li><a href="#">Digital Marketing</a></li>
+                        <li><a href="#">Branding</a></li>
+                        <li><a href="#">Consulting</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <div class="footer-contact">
+                        <div class="contact-item">
+                            <i class="fa fa-envelope"></i>
+                            <span>info@spacialdesign.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fa fa-phone"></i>
+                            <span>+1 (555) 123-4567</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fa fa-map-marker"></i>
+                            <span>123 Creative Street<br>Design City, DC 12345</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2024 Spacial Design. All rights reserved.</p>
+                    <div class="footer-bottom-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Cookie Policy</a>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
-
-<!-- Gallery Section -->
-
-<div class="gallery">
-    <div class="container-gallery">
-        <h2>our <span>gallery</span></h2>
-        <div class="gallery-box">
-            <img src="images/product/app-1.jpg" alt="product-1">
-            <img src="images/product/app-2.jpg" alt="product-2">
-            <img src="images/product/app-3.jpg" alt="product-3">
-            <img src="images/product/books-2.jpg" alt="product-4">
-            <img src="images/product/books-3.jpg" alt="product-5">
-            <img src="images/product/branding-1.jpg" alt="product-6">
-            <img src="images/product/branding-2.jpg" alt="product-7">
-            <img src="images/product/branding-3.jpg" alt="product-8">
-        </div>
-    </div>
-</div>
-
-<!-- features section -->
-
-<div class="features">
-    <div class="container-features">
-        <h2>our <span>features</span></h2>
-        <!-- features 1 -->
-        <div class="features-box">
-            <img src="images/product/features(1).jpg" alt="features">
-            <h4>development</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae et aperiam asperiores sed necessitatibus voluptatem similique fuga temporibus aliquid minima. Nesciunt, nihil et! Necessitatibus distinctio rem quisquam labore quam doloremque!</p>
-        </div>
-        <!-- features 2 -->
-        <div class="features-box">
-            <img src="images/product/features(2).jpg" alt="features">
-            <h4>development</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae et aperiam asperiores sed necessitatibus voluptatem similique fuga temporibus aliquid minima. Nesciunt, nihil et! Necessitatibus distinctio rem quisquam labore quam doloremque!</p>
-        </div>
-        <!-- features 3 -->
-        <div class="features-box">
-            <img src="images/product/features(3).jpg" alt="features">
-            <h4>development</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae et aperiam asperiores sed necessitatibus voluptatem similique fuga temporibus aliquid minima. Nesciunt, nihil et! Necessitatibus distinctio rem quisquam labore quam doloremque!</p>
-        </div>
-    </div>
-</div>
-
-<!-- testimonials section -->
-
-<div class="testimonials">
-    <div class="container-testimonials">
-        <h2><span>test</span>imonials</h2>
-        <!-- testimonials 1 -->
-        <div class="testimonials-box">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos officiis laudantium dolores dolorem. Quas, saepe sint ut temporibus in voluptatum autem quo adipisci similique totam eveniet repudiandae cum harum molestias!</p>
-            <div class="box-info">
-                <img src="images/team/blog-author-4.jpg" alt="castem 1">
-                <h4>sara mosaad</h4>
-                <p>CEO AT Company</p>
-            </div>
-        </div>
-        <!-- testimonials 2 -->
-        <div class="testimonials-box">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos officiis laudantium dolores dolorem. Quas, saepe sint ut temporibus in voluptatum autem quo adipisci similique totam eveniet repudiandae cum harum molestias!</p>
-            <div class="box-info">
-                <img src="images/team/blog-author-6.jpg" alt="castem 1">
-                <h4>rana ahmed</h4>
-                <p>CEO AT Company</p>
-            </div>
-        </div>
-        <!-- testimonials 3 -->
-        <div class="testimonials-box">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos officiis laudantium dolores dolorem. Quas, saepe sint ut temporibus in voluptatum autem quo adipisci similique totam eveniet repudiandae cum harum molestias!</p>
-            <div class="box-info">
-                <img src="images/team/blog-author-2.jpg" alt="castem 1">
-                <h4>ola ali</h4>
-                <p>CEO AT Company</p>
-            </div>
-        </div>
-    </div>
-</div>
-
+    </footer>
 
 </body>
+
 </html>
