@@ -41,7 +41,7 @@ window.onload = () => {
             // تحديث الصورة بشكل عشوائي كل ثانية
             backgroundInterval = setInterval(() => {
                 let randomGallery = Math.floor(Math.random() * gallery.length);
-                landingPage.style.backgroundImage = `url(../images/slide-show/${gallery[randomGallery]})`;
+                landingPage.style.backgroundImage = `url(./images/slide-show/${gallery[randomGallery]})`;
             }, 5000);
         }
     }
